@@ -13,7 +13,7 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
         params: {},
         headers: {
             Authorization: `Bearer ${myKey}`,
-        }
+        },
     });
     return response.data.hits;
 };
