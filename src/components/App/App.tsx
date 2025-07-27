@@ -1,6 +1,7 @@
 import css from "./App.module.css"
 import type {Movie} from "../../types/movie"
 import toast from "react-hot-toast"
+import { Toaster } from "react-hot-toast"
 import { useState } from "react"
 import { fetchMovies } from "../../servises/movieService"
 import SearchBar from "../SearchBar/SearchBar"
@@ -51,6 +52,7 @@ export default function App() {
     return (
         <div className={css.app}>
             <SearchBar onSubmit={handleSearch} />
+            <Toaster />
             {isLoading && <Loader />}
             {isError && <ErrorMessage />}
             {movies.length > 0 && <MovieGrid onSelect={handleSelect} movies={movies} />}
