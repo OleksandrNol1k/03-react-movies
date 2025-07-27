@@ -2,7 +2,7 @@ import axios from "axios"
 import type { Movie } from "../types/movie"
 
 interface FetchMoviesResp {
-  hits: Movie[];
+  results: Movie[];
 }
 
 export const fetchMovies = async (query: string): Promise<Movie[]> => {
@@ -13,5 +13,5 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
         params: {},
         headers: { Authorization: `Bearer ${myKey}`, },
     });
-    return response.data.hits;
+    return response.data.results;
 };
