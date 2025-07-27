@@ -11,9 +11,7 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
   
     const response = await axios.get<FetchMoviesResp>(`https://api.themoviedb.org/3/search/movie?query=${query}`, {
         params: {},
-        headers: {
-            Authorization: `Bearer ${myKey}`,
-        },
+        headers: { Authorization: `Bearer ${myKey}`, },
     });
     return response.data.hits;
 };
